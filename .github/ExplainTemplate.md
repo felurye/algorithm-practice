@@ -20,8 +20,6 @@ Input: nums = [2,7,11,15], target = 9
 Output: [0,1]
 ```
 
----
-
 ## 2. Entendendo o Problema
 
 Antes de pensar em código, precisamos entender o que está sendo pedido.
@@ -42,8 +40,6 @@ Exemplos:
 - números negativos
 - valores duplicados
 - input muito grande
-
----
 
 ## 3. Intuição da Solução
 
@@ -67,8 +63,6 @@ Exemplos de padrões comuns:
 
 Se possível, explique com **diagramas mentais ou exemplos simples**.
 
----
-
 ## 4. Solução Implementada
 
 ### Código
@@ -86,8 +80,6 @@ Explique:
 3. Como o algoritmo evolui durante a execução
 
 Se possível, faça um **trace do algoritmo** usando um exemplo.
-
----
 
 ## 5. Complexidade
 
@@ -118,8 +110,6 @@ O(n)
 
 Também explique **de onde vem essa complexidade**.
 
----
-
 ## 6. Alternativas de Solução
 
 Apresente outras abordagens possíveis.
@@ -137,8 +127,6 @@ Compare:
 | Brute Force | O(n²) | O(1)   | simples        |
 | Hash Map    | O(n)  | O(n)   | mais eficiente |
 
----
-
 ## 7. Justificativa da Escolha
 
 Explique por que a solução apresentada foi escolhida.
@@ -152,8 +140,6 @@ Considere:
 
 Às vezes a solução mais rápida **não é a mais simples**.
 
----
-
 ## 8. Conceitos Importantes
 
 Liste conceitos que aparecem na solução.
@@ -166,8 +152,6 @@ Exemplo:
 - Padrões de algoritmos
 
 Inclua links ou referências quando possível.
-
----
 
 ## 9. Dicas para Iniciantes
 
@@ -183,8 +167,6 @@ Sugira também:
 
 - problemas semelhantes
 - temas para estudar depois
-
----
 
 ## 10. Possíveis Melhorias
 

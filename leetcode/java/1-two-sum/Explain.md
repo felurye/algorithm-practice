@@ -4,8 +4,6 @@
 **Dificuldade:** Easy
 **Tópicos:** Array, Hash Table
 
----
-
 # 1. Descrição do Problema
 
 Dado um array de inteiros `nums` e um número inteiro `target`, precisamos encontrar **dois índices diferentes** do array cujos valores somados sejam iguais ao `target`.
@@ -17,8 +15,6 @@ Regras importantes do problema:
 - Existe **exatamente uma solução válida**.
 - **Não podemos usar o mesmo elemento duas vezes**.
 - A ordem dos índices retornados **não importa**.
-
----
 
 ## Exemplo
 
@@ -41,8 +37,6 @@ Explicação:
 nums[0] + nums[1] = 2 + 7 = 9
 ```
 
----
-
 # 2. Entendendo o Problema
 
 Antes de pensar na solução, precisamos interpretar corretamente o problema.
@@ -56,15 +50,11 @@ Antes de pensar na solução, precisamos interpretar corretamente o problema.
 
 - Um array contendo **dois índices**
 
----
-
 ## Restrições importantes
 
 - O array pode conter **valores negativos**
 - Pode conter **números repetidos**
 - Sempre existe **uma única solução**
-
----
 
 ## Casos de borda (Edge Cases)
 
@@ -91,8 +81,6 @@ Resultado:
 
 Mesmo com valores iguais, os **índices são diferentes**, então a solução é válida.
 
----
-
 # 3. Intuição da Solução
 
 Se temos:
@@ -110,8 +98,6 @@ b = target - a
 Ou seja, para cada número `a`, podemos calcular **qual número precisamos encontrar** para atingir o `target`.
 
 Esse número é chamado de **complemento**.
-
----
 
 ## Exemplo
 
@@ -132,8 +118,6 @@ Para cada número calculamos:
 Quando encontramos um número cujo **complemento já apareceu no array**, encontramos a solução.
 
 Para tornar essa verificação rápida usamos um **HashMap**.
-
----
 
 ## Por que usar HashMap?
 
@@ -158,8 +142,6 @@ Exemplo:
 
 Assim podemos verificar instantaneamente se o complemento já apareceu.
 
----
-
 # 4. Solução Implementada (Ideal)
 
 ## Código
@@ -182,8 +164,6 @@ class Solution {
 }
 ```
 
----
-
 # 5. Explicação Passo a Passo
 
 ## 1️⃣ Criamos o HashMap
@@ -205,8 +185,6 @@ Exemplo:
 7 -> 1
 ```
 
----
-
 ## 2️⃣ Percorremos o array apenas uma vez
 
 ```
@@ -214,8 +192,6 @@ for (int i = 0; i < nums.length; i++)
 ```
 
 Essa solução faz **apenas uma passagem pelo array**.
-
----
 
 ## 3️⃣ Calculamos o complemento
 
@@ -235,8 +211,6 @@ Então:
 ```
 complement = 7
 ```
-
----
 
 ## 4️⃣ Verificamos se o complemento já apareceu
 
@@ -263,8 +237,6 @@ Quando chegamos no `7`, o complemento é `2`.
 
 E `2` já está no mapa.
 
----
-
 ## 5️⃣ Retornamos os índices
 
 ```
@@ -276,8 +248,6 @@ Resultado:
 ```
 [0,1]
 ```
-
----
 
 ## 6️⃣ Se não encontrou, armazenamos o número
 
@@ -305,8 +275,6 @@ As operações do HashMap (`put` e `containsKey`) são:
 O(1)
 ```
 
----
-
 ## Complexidade de Espaço
 
 Precisamos armazenar até `n` elementos no HashMap.
@@ -314,8 +282,6 @@ Precisamos armazenar até `n` elementos no HashMap.
 ```
 O(n)
 ```
-
----
 
 # 7. Alternativas de Solução
 
@@ -335,8 +301,6 @@ class Solution {
     }
 }
 ```
-
----
 
 ## Como funciona
 
@@ -359,8 +323,6 @@ Comparações:
 ...
 ```
 
----
-
 ## Complexidade
 
 Tempo:
@@ -375,8 +337,6 @@ Espaço:
 O(1)
 ```
 
----
-
 ## Comparação
 
 | Abordagem          | Tempo | Espaço | Observação |
@@ -384,8 +344,6 @@ O(1)
 | Brute Force        | O(n²) | O(1)   | simples    |
 | HashMap (two-pass) | O(n)  | O(n)   | melhor     |
 | HashMap (one-pass) | O(n)  | O(n)   | **ideal**  |
-
----
 
 # 8. Justificativa da Escolha
 
@@ -397,8 +355,6 @@ A solução **One-pass HashMap** é considerada ideal porque:
 - evita trabalho desnecessário
 
 Essa abordagem é frequentemente esperada em **entrevistas técnicas**.
-
----
 
 # 9. Conceitos Importantes
 
@@ -412,8 +368,6 @@ Estrutura que permite:
 - busca rápida
 - acesso em **tempo constante O(1)**
 
----
-
 ### Complement Pattern
 
 Um padrão muito comum em problemas de algoritmos:
@@ -424,15 +378,11 @@ target - valor_atual
 
 Esse padrão aparece em diversos problemas de array.
 
----
-
 ### Trade-off Tempo vs Espaço
 
 Usamos **memória extra** (HashMap) para ganhar **velocidade**.
 
 Esse tipo de decisão é muito comum no design de algoritmos.
-
----
 
 # 10. Dicas para Iniciantes
 
@@ -454,13 +404,9 @@ b = target - a
 
 simplifica o raciocínio.
 
----
-
 ### 2️⃣ Escolha a estrutura de dados correta
 
 Usar `HashMap` reduz drasticamente a complexidade.
-
----
 
 ### 3️⃣ Evite loops aninhados quando possível
 
