@@ -9,8 +9,6 @@ O objetivo não é apenas armazenar soluções, mas também criar **explicaçõe
 
 As soluções podem conter uma explicação detalhada do raciocínio utilizado, análise de complexidade e possíveis alternativas.
 
----
-
 ## 🎯 Objetivos do Repositório
 
 - Praticar **algoritmos e estruturas de dados**
@@ -18,8 +16,6 @@ As soluções podem conter uma explicação detalhada do raciocínio utilizado, 
 - Explorar soluções em **múltiplas linguagens**
 - Criar **documentação didática das soluções**
 - Servir como **material de consulta e estudo**
-
----
 
 ## 🧠 O que você encontrará nas explicações
 
@@ -33,8 +29,6 @@ Os problemas podem conter um arquivo `Explain.md` com:
 - 🔁 Soluções alternativas
 - 🎓 Dicas para iniciantes
 - 📚 Conceitos importantes relacionados
-
----
 
 ## 📚 Conceitos abordados
 
@@ -51,8 +45,6 @@ Ao longo dos exercícios aparecem diversos conceitos importantes:
 - Sorting
 - Greedy Algorithms
 
----
-
 ## 🧩 Plataformas
 
 ### LeetCode
@@ -61,15 +53,11 @@ Ao longo dos exercícios aparecem diversos conceitos importantes:
 
 Plataforma focada em entrevistas técnicas e algoritmos.
 
----
-
 ### Beecrowd
 
 [https://www.beecrowd.com.br/](https://www.beecrowd.com.br/)
 
 Plataforma popular para prática de algoritmos e programação competitiva.
-
----
 
 ## 🎓 Para quem este repositório é útil
 
@@ -79,8 +67,6 @@ Este material pode ajudar:
 - Estudantes de **ciência da computação** e areas correlatas
 - Desenvolvedores se preparando para **entrevistas técnicas**
 - Programadores interessados em **aprender novas linguagens**
-
----
 
 ## 📌 Observação
 
