@@ -1,2 +1,15 @@
 .idea
 questions-clojure
+.lsp
+target
+.DS_Store
+*.iml
+*.log
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.log
+.clj-kondo
