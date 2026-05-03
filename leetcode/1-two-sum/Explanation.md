@@ -4,7 +4,7 @@
 **Dificuldade:** Easy
 **Tópicos:** Array, Hash Table
 
-# 1. Descrição do Problema
+## 1. Descrição do Problema
 
 Dado um array de inteiros `nums` e um número inteiro `target`, precisamos encontrar **dois índices diferentes** do array cujos valores somados sejam iguais ao `target`.
 
@@ -16,7 +16,7 @@ Regras importantes do problema:
 - **Não podemos usar o mesmo elemento duas vezes**.
 - A ordem dos índices retornados **não importa**.
 
-## Exemplo
+### Exemplo
 
 Entrada:
 
@@ -37,26 +37,26 @@ Explicação:
 nums[0] + nums[1] = 2 + 7 = 9
 ```
 
-# 2. Entendendo o Problema
+## 2. Entendendo o Problema
 
 Antes de pensar na solução, precisamos interpretar corretamente o problema.
 
-## Entrada
+### Entrada
 
 - Um array de inteiros
 - Um valor alvo (`target`)
 
-## Saída
+### Saída
 
 - Um array contendo **dois índices**
 
-## Restrições importantes
+### Restrições importantes
 
 - O array pode conter **valores negativos**
 - Pode conter **números repetidos**
 - Sempre existe **uma única solução**
 
-## Casos de borda (Edge Cases)
+### Casos de borda (Edge Cases)
 
 Alguns cenários que devemos considerar:
 
@@ -81,7 +81,7 @@ Resultado:
 
 Mesmo com valores iguais, os **índices são diferentes**, então a solução é válida.
 
-# 3. Intuição da Solução
+## 3. Intuição da Solução
 
 Se temos:
 
@@ -99,7 +99,7 @@ Ou seja, para cada número `a`, podemos calcular **qual número precisamos encon
 
 Esse número é chamado de **complemento**.
 
-## Exemplo
+### Exemplo
 
 ```
 nums = [2,7,11,15]
@@ -119,7 +119,7 @@ Quando encontramos um número cujo **complemento já apareceu no array**, encont
 
 Para tornar essa verificação rápida usamos um **HashMap**.
 
-## Por que usar HashMap?
+### Por que usar HashMap?
 
 Um `HashMap` permite:
 
@@ -142,9 +142,9 @@ Exemplo:
 
 Assim podemos verificar instantaneamente se o complemento já apareceu.
 
-# 4. Solução Implementada (Ideal)
+## 4. Solução Implementada (Ideal)
 
-## Código
+### Código
 
 ```java
 class Solution {
@@ -164,9 +164,9 @@ class Solution {
 }
 ```
 
-# 5. Explicação Passo a Passo
+## 5. Explicação Passo a Passo
 
-## 1️⃣ Criamos o HashMap
+### 1. Criamos o HashMap
 
 ```java
 Map<Integer, Integer> map = new HashMap<>();
@@ -185,7 +185,7 @@ Exemplo:
 7 -> 1
 ```
 
-## 2️⃣ Percorremos o array apenas uma vez
+### 2. Percorremos o array apenas uma vez
 
 ```
 for (int i = 0; i < nums.length; i++)
@@ -193,7 +193,7 @@ for (int i = 0; i < nums.length; i++)
 
 Essa solução faz **apenas uma passagem pelo array**.
 
-## 3️⃣ Calculamos o complemento
+### 3. Calculamos o complemento
 
 ```
 int complement = target - nums[i];
@@ -212,7 +212,7 @@ Então:
 complement = 7
 ```
 
-## 4️⃣ Verificamos se o complemento já apareceu
+### 4. Verificamos se o complemento já apareceu
 
 ```
 map.containsKey(complement)
@@ -237,7 +237,7 @@ Quando chegamos no `7`, o complemento é `2`.
 
 E `2` já está no mapa.
 
-## 5️⃣ Retornamos os índices
+### 5. Retornamos os índices
 
 ```
 return new int[] { map.get(complement), i };
@@ -249,7 +249,7 @@ Resultado:
 [0,1]
 ```
 
-## 6️⃣ Se não encontrou, armazenamos o número
+### 6. Se não encontrou, armazenamos o número
 
 ```
 map.put(nums[i], i);
@@ -257,11 +257,9 @@ map.put(nums[i], i);
 
 Isso permite que números futuros encontrem esse valor como complemento.
 
----
+## 6. Complexidade
 
-# 6. Complexidade
-
-## Complexidade de Tempo
+### Complexidade de Tempo
 
 Percorremos o array **uma única vez**.
 
@@ -275,7 +273,7 @@ As operações do HashMap (`put` e `containsKey`) são:
 O(1)
 ```
 
-## Complexidade de Espaço
+### Complexidade de Espaço
 
 Precisamos armazenar até `n` elementos no HashMap.
 
@@ -283,9 +281,9 @@ Precisamos armazenar até `n` elementos no HashMap.
 O(n)
 ```
 
-# 7. Alternativas de Solução
+## 7. Alternativas de Solução
 
-## Solução Brute Force (Força Bruta)
+### Solução Brute Force (Força Bruta)
 
 ```java
 class Solution {
@@ -302,7 +300,7 @@ class Solution {
 }
 ```
 
-## Como funciona
+### Como funciona
 
 Essa solução compara **todos os pares possíveis**.
 
@@ -323,7 +321,7 @@ Comparações:
 ...
 ```
 
-## Complexidade
+### Complexidade
 
 Tempo:
 
@@ -337,7 +335,7 @@ Espaço:
 O(1)
 ```
 
-## Comparação
+### Comparação
 
 | Abordagem          | Tempo | Espaço | Observação |
 | ------------------ | ----- | ------ | ---------- |
@@ -345,7 +343,7 @@ O(1)
 | HashMap (two-pass) | O(n)  | O(n)   | melhor     |
 | HashMap (one-pass) | O(n)  | O(n)   | **ideal**  |
 
-# 8. Justificativa da Escolha
+## 8. Justificativa da Escolha
 
 A solução **One-pass HashMap** é considerada ideal porque:
 
@@ -356,7 +354,7 @@ A solução **One-pass HashMap** é considerada ideal porque:
 
 Essa abordagem é frequentemente esperada em **entrevistas técnicas**.
 
-# 9. Conceitos Importantes
+## 9. Conceitos Importantes
 
 Esse problema envolve vários conceitos fundamentais.
 
@@ -384,11 +382,11 @@ Usamos **memória extra** (HashMap) para ganhar **velocidade**.
 
 Esse tipo de decisão é muito comum no design de algoritmos.
 
-# 10. Dicas para Iniciantes
+## 10. Dicas para Iniciantes
 
 Algumas lições importantes desse problema:
 
-### 1️⃣ Sempre procure padrões matemáticos
+### 1. Sempre procure padrões matemáticos
 
 Transformar:
 
@@ -404,11 +402,11 @@ b = target - a
 
 simplifica o raciocínio.
 
-### 2️⃣ Escolha a estrutura de dados correta
+### 2. Escolha a estrutura de dados correta
 
 Usar `HashMap` reduz drasticamente a complexidade.
 
-### 3️⃣ Evite loops aninhados quando possível
+### 3. Evite loops aninhados quando possível
 
 Loops aninhados geralmente indicam:
 

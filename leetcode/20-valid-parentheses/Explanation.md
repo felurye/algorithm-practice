@@ -2,7 +2,7 @@
 
 **Problema:** Valid Parentheses  
 **Dificuldade:** Easy  
-**Tópicos:** Stack, String, Hash Map
+**Tópicos:** Stack, String
 
 ## 1. Descrição do Problema
 
